@@ -1,8 +1,12 @@
 package com.example.fermadrobiu.model.entity.user;
 
+import jakarta.persistence.Entity;
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class Farmer extends User{
     private static List<Farmer> allFarmers = new ArrayList<>();
     private static void addStudent(Farmer farmer) {
@@ -19,4 +23,8 @@ public class Farmer extends User{
             System.out.println(farmer);
         }
     }
+    public void getNotified(String message) {
+        System.out.println("Farmer " + this.getLastName() + " received message: " + message);
+    }
+
 }
